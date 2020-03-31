@@ -1,0 +1,12 @@
+{{!-- error是passport提供的错误信息，不是数组，而是单个的信息 --}}
+{{#if error}}
+<div class="alert alert-danger">{{error}}</div>
+{{/if}}
+
+
+{{!-- 通过req.flash进行渲染的错误信息 --}}
+{{#each errors}}
+<div class="alert alert-danger">{{text}}</div>
+{{else}}
+
+{{/each}}

@@ -1,0 +1,6 @@
+1.在一个cmd下，进入bin目录，启动数据库：
+mongod --dbpath D:\mongodb-win32-x86_64-2012plus-4.2.5\data\db
+
+2.在另一个cmd下，进入bin目录，执行mongo即可。
+
+假如2不成功，可能是1执行过程中卡住了，重新执行1.

@@ -1,0 +1,16 @@
+{{#each ideas}}
+<div class="card card-body mb-2">
+    <h4>{{title}}</h4>
+    <p>{{details}}</p>
+    {{!-- 视频中的id在现在的mongodb中已经变为_id --}}
+    <a href="/ideas/edit/{{_id}}" class="btn btn-dark btn-block">编辑</a>
+    <form method="POST" action="/ideas/{{_id}}?_method=DELETE">
+        <input type="hidden" name="method" value="DELETE">
+        <input type="submit" class="btn btn-danger btn-block" value="删除">
+    </form>
+</div>
+{{else}}
+<div class="card card-body mb-2">
+    <p>还没有任何想学的课程</p>
+</div>
+{{/each}}

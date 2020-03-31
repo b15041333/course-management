@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary mb-3">
+    <div class="container">
+        <a class="navbar-brand" href="/">课程管理平台</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarNav" class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                {{#if user}}
+                {{!-- 若用户已登录，显示其想学的课程 --}}
+                <li class="nav-ittem dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbarDropdownMenuLink">想学的课程</a>
+                    <div class="dropdown-menu">
+                        <a href="/ideas" class="dropdown-item">想学</a>
+                        <a href="/ideas/add" class="dropdown-item">添加</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="/users/logout" class="nav-link">退出</a>
+                </li>
+
+                {{else}}
+                {{!-- 若用户未登录，显示“登录”与“注册”选项 --}}
+                <li class="nav-item">
+                    <a href="/users/login" class="nav-link">登录</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/users/register" class="nav-link">注册</a>
+                </li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</nav>
